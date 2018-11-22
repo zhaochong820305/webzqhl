@@ -1,0 +1,119 @@
+/**
+ * Created by 申燕秋 on 2016/5/26.
+ */
+
+$(function () {
+    $("#model_con2").slideUp();
+    $("#model_con3").slideUp();
+    $("#model_con4").slideUp();
+	$("#model_con5").slideUp();
+    $("#model_t11").click(function(){
+        $("#model_t11").addClass("model_active");
+        $("#model_t12,#model_t13,#model_t14,#model_t15").removeClass("model_active");
+        $("#model_con1").slideDown();
+        $("#model_con2").slideUp();
+        $("#model_con3").slideUp();
+        $("#model_con4").slideUp();
+		$("#model_con5").slideUp();
+    });
+    $("#model_t12").click(function(){
+        $("#model_t12").addClass("model_active");
+        $("#model_t11,#model_t13,#model_t14,#model_t15").removeClass("model_active");
+        $("#model_con1").slideUp();
+        $("#model_con2").slideDown();
+        $("#model_con3").slideUp();
+        $("#model_con4").slideUp();
+		$("#model_con5").slideUp();
+    });
+    $("#model_t13").click(function(){
+        $("#model_t13").addClass("model_active");
+        $("#model_t11,#model_t12,#model_t14,#model_t15").removeClass("model_active");
+        $("#model_con1").slideUp();
+        $("#model_con2").slideUp();
+        $("#model_con3").slideDown();
+        $("#model_con4").slideUp();
+		$("#model_con5").slideUp();
+    });
+    $("#model_t14").click(function(){
+        $("#model_t14").addClass("model_active");
+        $("#model_t11,#model_t12,#model_t13,#model_t15").removeClass("model_active");
+        $("#model_con1").slideUp();
+        $("#model_con2").slideUp();
+        $("#model_con3").slideUp();
+        $("#model_con4").slideDown();
+		$("#model_con5").slideUp();
+    });
+	$("#model_t15").click(function(){
+        $("#model_t15").addClass("model_active");
+        $("#model_t11,#model_t12,#model_t13,#model_t14").removeClass("model_active");
+        $("#model_con1").slideUp();
+        $("#model_con2").slideUp();
+        $("#model_con3").slideUp();
+        $("#model_con4").slideUp();
+		$("#model_con5").slideDown();
+    });
+
+    //$("#model_con6").slideUp();
+    $("#model_con7").slideUp();
+    $("#model_con8").slideUp();
+	$("#model_con9").slideUp();
+    $("#model_t21").click(function(){
+        $("#model_t21").addClass("model_active");
+        $("#model_t22,#model_t23,#model_t24").removeClass("model_active");
+        $("#model_con6").slideDown();
+        $("#model_con7").slideUp();
+        $("#model_con8").slideUp();
+        $("#model_con9").slideUp();
+    });
+    $("#model_t22").click(function(){
+        $("#model_t22").addClass("model_active");
+        $("#model_t21,#model_t23,#model_t24").removeClass("model_active");
+        $("#model_con6").slideUp();
+        $("#model_con7").slideDown();
+        $("#model_con8").slideUp();
+        $("#model_con9").slideUp();
+    });
+    $("#model_t23").click(function(){
+        $("#model_t23").addClass("model_active");
+        $("#model_t21,#model_t22,#model_t24").removeClass("model_active");
+        $("#model_con6").slideUp();
+        $("#model_con7").slideUp();
+        $("#model_con8").slideDown();
+        $("#model_con9").slideUp();
+    });
+    $("#model_t24").click(function(){
+        $("#model_t24").addClass("model_active");
+        $("#model_t21,#model_t22,#model_t23").removeClass("model_active");
+        $("#model_con6").slideUp();
+        $("#model_con7").slideUp();
+        $("#model_con8").slideUp();
+        $("#model_con9").slideDown();
+    });
+    //$("#model_con31").slideUp();
+    $("#model_con32").slideUp();
+    $("#model_con33").slideUp();
+    $("#model_t31").click(function () {
+        $("#model_t31").addClass("model_active");
+        $("#model_t32,#model_t33").removeClass("model_active");
+        $("#model_con31").slideDown();
+        $("#model_con32").slideUp();
+        $("#model_con33").slideUp();      
+    });
+    $("#model_t32").click(function () {
+        $("#model_t32").addClass("model_active");
+        $("#model_t31,#model_t33").removeClass("model_active");
+        $("#model_con31").slideUp();
+        $("#model_con32").slideDown();
+        $("#model_con33").slideUp();       
+    });
+    $("#model_t33").click(function () {
+        $("#model_t33").addClass("model_active");
+        $("#model_t31,#model_t32").removeClass("model_active");
+        $("#model_con31").slideUp();
+        $("#model_con32").slideUp();
+        $("#model_con33").slideDown();        
+    });
+});
+
+
+

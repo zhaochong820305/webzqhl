@@ -1,0 +1,32 @@
+﻿ .mGrid { 
+width: 98%;
+background-color: #fff;  
+margin: 5px 0 10px 0;    
+border-collapse:collapse;    
+margin-left:20px;
+}   
+.mGrid td {   
+padding: 2px 0 0 5px;  
+line-height:30px;
+height:30px;  
+border: solid 1px gray;
+color: #717171;    
+}   
+.mGrid th { 
+ padding: 4px 2px 0 20px;   
+ color: #fff;    
+ background-color:darkcyan;
+ border: solid 1px gray;
+ font-size: 0.9em;    
+}  
+.mGrid .alt { background: #fcfcfc  repeat-x top; }
+.mGrid .pgr { background: peru repeat-x top; } 
+.mGrid .pgr table { margin: 5px 0; }  
+.mGrid .pgr td {   
+border-width: 0;   
+padding: 0 6px;   
+/*border-left: solid 1px #666;  */
+font-weight: bold;   
+color: #fff;   
+line-height: 12px;   
+}

@@ -1,0 +1,121 @@
+.cgpj-con{
+    width: 1100px;height: 500px; margin: 5px auto 0;
+}
+.cgpj-con .con-left{
+    width: 280px;height: 600px;float: left;
+}
+.con-nav{
+    width: 280px;height: 40px;background-color: #ff9a35; text-align: center;line-height: 40px;font-size: 20px;color: #FFFFFF;font-weight: 600;letter-spacing: 2px;
+}
+.con-nav-s{
+    width: 280px;height: 40px;border-bottom: 2px solid #e8e8e8; text-align: center;line-height: 40px;font-size: 18px;font-weight: 600;
+}
+.con-nav-sa{
+    color: #3f3f3f;text-decoration: none;
+}
+.con-nav-sa:hover{
+    color: #ff9a35;
+}
+.con-nav-sactive{
+    color: #ff9a35;text-decoration: none;cursor: pointer;
+}
+.con-nav-img{
+    position: relative;margin-top: 5px;
+}
+.con-nav-img-c{
+    width:70px; color: #ff6600;position:absolute;top: 50px;left: 45px;font-weight: 900;
+}
+.con-ns {
+   margin-left: 60px;
+}
+.con-ns p {
+   margin-left: 5px;color:red;font-size:12px;
+}
+
+/*文件法规...*/
+.conn{
+    width: 790px;float:right;
+}
+.conn-top{
+    width: 790px;height: 38px; border-bottom: 3px solid #ff9a35;
+}
+.conn-top-title1{
+    display: inline-block; font-size: 20px; color: #ff9a35;line-height: 35px;font-weight:600;letter-spacing: 2px;
+}
+.conn-top-title2{
+    display: inline-block;float: right;line-height: 45px; color: #ff9a35;margin-right: 5px;
+}
+.conn-top-title3{
+    display: inline-block;float: right;line-height: 45px;
+}
+.conn-con{
+    width: 770px;margin-top: 10px;padding: 10px;
+}
+.conn-con ul{
+    width: 770px;list-style: none;text-indent: 2em;line-height: 40px;
+}
+.conn-con ul li{
+    /*font-family: '新宋体','宋体';*/
+}
+.conn-con-c1{
+    width: 770px;line-height: 40px;text-indent: 2em;
+    /*font-family: '新宋体','宋体';*/
+}
+.conn-con-c1 p{
+
+    /*font-family: '新宋体','宋体';*/
+}
+p.bd{
+    font-weight: 700;
+}
+/*获奖项目*/
+.conh-con{
+    width: 770px;padding: 10px;
+}
+.conh-con-c{
+    padding-left: 20px;
+}
+.conh-con-c ul{
+    color: #0085ff;
+}
+.conh-con-c ul li{
+    margin-top: 20px;
+}
+.conh-con-c ul li .c1{
+    display: inline-block;
+    color: #666666;
+}
+.conh-con-c ul li .c2{
+    display: inline-block;
+    float: right;
+    color: #131313;
+}
+.conh-con-c ul li .c1 a{
+    text-decoration: none;
+    color: #131313;
+}
+.conh-con-c ul li .c1 a:hover{
+    color: #ff0000;
+}
+.yema{ float: right;margin-bottom: 40px;margin-top: 40px;}
+.yema a{display:inline-block;width:30px; height:30px; text-align:center; line-height:30px; border:1px solid #999; margin-right:14px; text-decoration:none; color:#131313; font-weight:bold;}
+.yema a:hover{color:#FFF; background-color: #007ce9;}
+
+
+.gywm_l{
+    margin-top: 15px;
+}
+.gywm_lt{
+    display: inline-block;font-weight: 900;
+}
+.gywm_lt1{
+    display: inline-block;font-weight: 900;letter-spacing: 5px;
+}
+.gywm_lb{
+    display: inline-block;
+}
+/*百度地图*/
+.bddu{
+    width:600px;height:350px;border:#ccc solid 1px;margin-top: 15px;
+}
+img{max-width:100%}

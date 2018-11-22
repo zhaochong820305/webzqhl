@@ -1,0 +1,157 @@
+﻿li{margin:0; padding:0; list-style-type:none}
+ul.leftmenu {
+    float: left;
+    width: 250px;
+    border: 1px solid #ddd;
+}
+
+    ul.leftmenu li.header {
+        padding: 10px;
+        background-color: #0198e7;
+        opacity:0.8;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    ul.leftmenu li.item {
+        padding: 10px 0;
+    }
+
+    ul.leftmenu li.on {
+        padding: 10px 0;
+        background-color: #efefef;
+        margin: 1px 0;
+    }
+
+    ul.leftmenu li.item:hover {
+        background-color: #efefef;
+    }
+
+    ul.leftmenu li.item a {
+        font-size: 14px;
+        padding: 10px 100px 10px 30px;
+    }
+
+    ul.leftmenu li.on a {
+        font-size: 14px;
+        padding: 10px 100px 10px 30px;
+    }
+
+    .rightmenu {
+    float: left;
+    width: 940px;
+    margin-left:10px;
+}
+
+    .rightmenu > div {
+        width: 100%;
+        overflow: hidden;
+    }
+
+        .rightmenu > div.title {
+            padding: 10px;
+            background: #0198e7;
+            opacity:0.8;
+            font-size: 16px;
+            color:#fff;
+        }
+
+        .rightmenu > div.title2 {
+            padding: 10px;
+            background: #efefef;
+            border: 1px solid #ddd;
+        }
+
+            .rightmenu > div.title2 span.left {
+                font-weight: bold;
+            }
+
+        .rightmenu > div.content {
+            padding: 10px;
+            line-height: 30px;
+        }
+
+ .table {
+    border-collapse: collapse !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+
+
+  table {
+  max-width: 100%;
+  background-color: transparent;
+}
+
+th {
+  text-align: left;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+
+    .inputLB{ height:25px; border-radius:5px; border:1px solid #999; width:300px; margin-top:5px;}
+.buttonLB {
+    height:30px;border-radius:5px; border:1px solid #999; width:300px; margin-top:10px;
+    cursor:pointer;
+width:150px; color:#FFF; background-color:#06c;font-weight:bold;
+}
+
+.buttonLB1 {
+    height:30px;border-radius:5px; border:1px solid #999; width:300px; margin-top:10px;
+    cursor:pointer;
+width:150px; color:#FFF; background-color:#06c;font-weight:bold;padding: 4px 20px;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {background-color: #06c;} /* Blue */
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+
+table.gridtable {
+    
+    margin-top: 10px;
+    
+	font-family: verdana,arial,sans-serif;
+	font-size:14px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 4px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 4px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+.logo li {list-style-type:none; list-style:none;}

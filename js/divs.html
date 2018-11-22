@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>两个div的交替显示和隐藏</title>
+  <script language="javascript" src="jquery.js"></script>
+ </head>
+
+ <body>
+   <div class="rightcon2" id="hideTxt" style="display:block;">简单文字内容显示
+              <a onclick="$('#fullTxt').show();$(this).parent().hide();return false;" href=" javascript:void(0)" target="_blank" class="jiange">&gt;&gt;全部</a>
+            </div>
+   <div class="rightcon2" id="fullTxt" style="display:none;">详细文字内容显示
+              <a onclick="$('#hideTxt').show();$(this).parent().hide();return false;" href="javascript:void(0) " target="_blank" class="jiange">&gt;&gt;隐藏</a>
+            </div>
+ </body>
+</html>
