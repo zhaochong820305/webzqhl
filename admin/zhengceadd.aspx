@@ -109,13 +109,15 @@
             <asp:TextBox ID="youxiaoqi" type="date" CssClass="inputLB" Width="600px" runat="server"></asp:TextBox>
         </li>
         <li><label class="labelblue">下面选择：</label>       
-            <asp:TextBox ID="tbhangye" CssClass="inputLB" MaxLength="500" Width="500px" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tbhangye" CssClass="inputLB" MaxLength="500" Width="500px" runat="server" Enabled="false"></asp:TextBox>
         </li>
         <li><label class="labelblue">针对行业：</label>
-            <%--<asp:TextBox ID="hangye" CssClass="inputLB" MaxLength="20" Width="600px" runat="server"></asp:TextBox>--%>
-            <asp:DropDownList  CssClass="inputLB" Width="200px"  ID="hangye" runat="server" AutoPostBack="True" OnSelectedIndexChanged="hangye_SelectedIndexChanged"></asp:DropDownList>
-            <asp:DropDownList  CssClass="inputLB" Width="200px"  ID="hangye2" runat="server" AutoPostBack="True" ></asp:DropDownList>
-            <asp:Button ID="Button1" CssClass="buttonLB" runat="server" Text="添加" OnClick="hangyeadd_Click" />
+            
+                    <%--<asp:TextBox ID="hangye" CssClass="inputLB" MaxLength="20" Width="600px" runat="server"></asp:TextBox>--%>
+                    <asp:DropDownList  CssClass="inputLB" Width="200px"  ID="hangye" runat="server" AutoPostBack="true" OnSelectedIndexChanged="hangye_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:DropDownList  CssClass="inputLB" Width="200px"  ID="hangye2" runat="server"  ></asp:DropDownList>
+                    <asp:Button ID="Button1" CssClass="buttonLB" runat="server" Text="添加" OnClick="hangyeadd_Click" />
+            
             <%--            <asp:CheckBoxList ID="hangyecl" runat="server" RepeatColumns="5"></asp:CheckBoxList>--%> 
         </li>
         <li><label class="labelblue">针对产品：</label>

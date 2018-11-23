@@ -13,6 +13,7 @@ public partial class admin_zhengceadd : System.Web.UI.Page
     public int page = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
+        hangye.AutoPostBack = true;
         if (!Common.isAdminLogin())
         {
             Response.Redirect("login.aspx");
@@ -424,9 +425,11 @@ public partial class admin_zhengceadd : System.Web.UI.Page
         //hangye2(52, hangyecl);
         //hangye2class(Convert.ToInt16( hangye.SelectedValue), hangyecl);
         settinghy(Convert.ToInt16(hangye.SelectedValue), hangye2);
+        tbhangye.Focus();
     }
     protected void hangyeadd_Click(object sender, EventArgs e)
     {
         tbhangye.Text += hangye2.SelectedItem.Text+",";
+        tbhangye.Focus();
     }
 }

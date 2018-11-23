@@ -122,8 +122,8 @@
                     <%--  <asp:Label ID="content1"  runat="server" Text="" Visible="False"></asp:Label>--%>
                     <asp:TextBox ID="textBox5"   Width="800px" TextMode="MultiLine" Height="100px" runat="server"></asp:TextBox>
                 </li>
-                <li><label class="labelblue">正常采集：</label>
-                    <asp:TextBox ID="error" CssClass="inputLB" MaxLength="50" Width="600px" runat="server" Text="1"></asp:TextBox>
+                <li><%--<label class="labelblue">正常采集：</label>--%>
+                    <asp:TextBox ID="error" CssClass="inputLB" MaxLength="50" Width="600px" runat="server" Text="1" Visible="false"></asp:TextBox>
                 </li>
                 <li><label class="labelblue">&nbsp;</label>
                     <asp:Button ID="bc" CssClass="buttonLB" runat="server" Text=" 提取连接 " OnClick="bc_Click" />
