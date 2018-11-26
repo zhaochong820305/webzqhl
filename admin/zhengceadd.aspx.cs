@@ -11,9 +11,11 @@ public partial class admin_zhengceadd : System.Web.UI.Page
     public string str = string.Empty;
     public int classid = 0;
     public int page = 0;
+    public string classjs = "";
+    public string class2js = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        hangye.AutoPostBack = true;
+        //hangye.AutoPostBack = true;
         if (!Common.isAdminLogin())
         {
             Response.Redirect("login.aspx");
@@ -43,7 +45,9 @@ public partial class admin_zhengceadd : System.Web.UI.Page
                 NewMethod(6, hangyec);//政策所属：十大重点领域
                 NewMethod(50, gongchengc);//政策所属：五大工程
                 //hangye2(52, hangyecl);//政策所属：针对行业
-                settingzc(52, hangye); //针对行业
+                //settingzc(52, hangye); //针对行业
+                settingzcjs(52); //针对行业
+                settinghy2js(); //行业小类
                 if (id == 0)
                 {
                     faburiqi.Text = DateTime.Now.ToString("yyyy-MM-dd");
@@ -75,7 +79,8 @@ public partial class admin_zhengceadd : System.Web.UI.Page
                         youxiaoqi.Text = dr["youxiaoqi"].ToString();
                         //hangye.Text = dr["hangye"].ToString();
                         //SetChecked(hangyecl, dr["hangye"].ToString(), ",");
-                        tbhangye.Text = dr["hangye"].ToString();
+                        //tbhangye.Text = dr["hangye"].ToString();
+                        hangyejs.Value = dr["hangye"].ToString();
                         chanpin.Text = dr["chanpin"].ToString();
                         zcywdizhi.Text = dr["zcywdizhi"].ToString();
                         //mubiao.Text = dr["mubiao"].ToString();
@@ -344,7 +349,8 @@ public partial class admin_zhengceadd : System.Web.UI.Page
         //////        //这是没打的
         //////    }
         //////}
-        hangye = tbhangye.Text;
+        //hangye = tbhangye.Text;
+        hangye = hangyejs.Value;
         if (hangye == "")
         {
             msg.Text = "必须选择一个或多个行业";
@@ -401,13 +407,38 @@ public partial class admin_zhengceadd : System.Web.UI.Page
     }
     private void settingzc(int itype, DropDownList ddlname)
     {
-        DataTable dt = DBZhengce.getDataTable("SELECT  [ID],[Name]  FROM [dbo].[Setting] where SettingID=" + itype + " and state=1");
+        DataTable dt = DBZhengce.getDataTable("SELECT  [ID],[Name]  FROM [dbo].[Setting] where SettingID=" + itype + " and state=1 order by id ");
         ddlname.DataSource = dt;
         ddlname.DataTextField = "Name";
         ddlname.DataValueField = "ID";
         ddlname.DataBind();
         ddlname.Items.Insert(0, new ListItem("==未选择==", "0"));
         ddlname.SelectedValue = "";
+        if(itype==52)
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                classjs += "\"" + dr["Name"].ToString() + "\",";
+            }
+            classjs = classjs.Substring(0, classjs.Length - 1);
+            classjs = "[\"请选择行业\"," + classjs + "]";
+        }
+        
+    }
+    private void settingzcjs(int itype)
+    {
+        DataTable dt = DBZhengce.getDataTable("SELECT  [ID],[Name]  FROM [dbo].[Setting] where SettingID=" + itype + " and state=1 order by id ");
+      
+        if (itype == 52)
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                classjs += "\"" + dr["Name"].ToString() + "\",";
+            }
+            classjs = classjs.Substring(0, classjs.Length - 1);
+            classjs = "[\"请选择行业\"," + classjs + "]";
+        }
+
     }
     private void settinghy(int itype, DropDownList ddlname)
     {
@@ -420,16 +451,45 @@ public partial class admin_zhengceadd : System.Web.UI.Page
         //ddlname.SelectedValue = "";
     }
 
-    protected void hangye_SelectedIndexChanged(object sender, EventArgs e)
+    private void settinghy2js( )
     {
-        //hangye2(52, hangyecl);
-        //hangye2class(Convert.ToInt16( hangye.SelectedValue), hangyecl);
-        settinghy(Convert.ToInt16(hangye.SelectedValue), hangye2);
-        tbhangye.Focus();
+        DataTable dt = DBZhengce.getDataTable("SELECT  [HangYeID],[Name]  FROM [dbo].[HangYe2] where   state=1 order by HangYeID");
+        //class2js = "[";
+        string id = string.Empty;
+        foreach (DataRow dr in dt.Rows)
+        {
+            if(id != dr["HangYeID"].ToString())
+            {
+                if (id == null || id ==string.Empty)
+                {
+                    class2js += "[";
+                }
+                else
+                {
+                    class2js = class2js.Substring(0, class2js.Length - 1);
+                    class2js += "],[";
+                }            
+                
+                id = dr["HangYeID"].ToString();
+            }
+            
+            class2js += "\"" + dr["Name"].ToString() + "\",";
+             
+        }
+        class2js = class2js.Substring(0, class2js.Length - 1);
+        class2js = "[  [\"请选择小类\"]," + class2js + "]]";
     }
-    protected void hangyeadd_Click(object sender, EventArgs e)
-    {
-        tbhangye.Text += hangye2.SelectedItem.Text+",";
-        tbhangye.Focus();
-    }
+
+    //protected void hangye_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    //hangye2(52, hangyecl);
+    //    //hangye2class(Convert.ToInt16( hangye.SelectedValue), hangyecl);
+    //    settinghy(Convert.ToInt16(hangye.SelectedValue), hangye2);
+    //    tbhangye.Focus();
+    //}
+    //protected void hangyeadd_Click(object sender, EventArgs e)
+    //{
+    //    tbhangye.Text += hangye2.SelectedItem.Text+",";
+    //    tbhangye.Focus();
+    //}
 }
