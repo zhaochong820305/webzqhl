@@ -65,3 +65,7 @@
         <br />
         <%--51--%>
         <a <% if (stype == "52") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=52">+ 政策行业</a>&nbsp;
+        <%--53，54 政策大数据 关键词 项目类型--%>
+        <a <% if (stype == "55") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=55">+ 支持级别</a>&nbsp;
+        <a <% if (stype == "56") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=56">+ 支持对象</a>&nbsp;
+ 

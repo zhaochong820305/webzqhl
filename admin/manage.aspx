@@ -49,7 +49,7 @@
                             <asp:BoundField DataField="HomePhone" HeaderText="家庭电话" />
                             <asp:BoundField DataField="EnName" HeaderText="状态" />
                             <asp:BoundField DataField="IsAgentName" HeaderText="是否坐席" />
-                            <asp:BoundField DataField="CreateDate" HeaderText="添加时间" />
+                            <asp:BoundField DataField="CreateDate" HeaderText="添加时间"  DataFormatString="{0:yyyy-MM-dd}" />
                            <%-- <asp:CommandField HeaderText="编辑" ShowEditButton="True" >--%>
                             <%--<FooterStyle ForeColor="Blue" />
                             <ItemStyle ForeColor="Blue" />

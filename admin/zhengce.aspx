@@ -35,12 +35,13 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="new" CssClass="buttonLB" runat="server" Text="添加政策数据" OnClick="new_Click" />
             <%--&nbsp;<asp:Button ID="Button1" CssClass="buttonLB" runat="server" Text="添加成果持有人" OnClick="cyr_Click" />--%>
             <a href="zhengcelist.aspx?id=0" class="buttonLB1" style="font-size:12px;line-height:20px;height:20px;display:inline-block; width:90px; " >政策采集</a> 
-            <a href="zhengcekeyword.aspx?type=53" class="buttonLB1" style="font-size:12px;line-height:20px;height:20px;display:inline-block; width:90px; " >添加关键词</a> 
-             <a href="zhengcekeyword.aspx?type=52" class="buttonLB1" style="font-size:12px;line-height:20px;height:20px;display:inline-block; width:90px; " >添加行业</a> 
+            <%--<a href="zhengcekeyword.aspx?type=53" class="buttonLB1" style="font-size:12px;line-height:20px;height:20px;display:inline-block; width:90px; " >添加关键词</a> --%>
+            <a href="zhengcekeyword.aspx?type=52" class="buttonLB1" style="font-size:12px;line-height:20px;height:20px;display:inline-block; width:90px; " >添加行业</a> 
+            <a href="zhengcekeyword.aspx?type=54" class="buttonLB1" style="font-size:12px;line-height:20px;height:20px;display:inline-block; width:90px; " >添加项目类型</a>
             <%--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button CssClass="buttonLB1" ID="Button61" runat="server" OnClick="Button61_Click" Text="生成水印" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button CssClass="buttonLB1" ID="Button2" runat="server" OnClick="Button2_Click" Text="按点击率排序" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button CssClass="buttonLB1" ID="Button3" runat="server" OnClick="Button3_Click" Text="处理成果标签" />--%>
-           <%-- <% if (Session["userid"].ToString() == "41" || Session["userid"].ToString() == "13")
+            <%-- <% if (Session["userid"].ToString() == "41" || Session["userid"].ToString() == "13")
                { %>
                    &nbsp;&nbsp;&nbsp;<asp:Button CssClass="buttonLB1" ID="Button1" runat="server" OnClick="Button1_Click" Text="处理空业务员" />
             <% } %>--%>
@@ -88,7 +89,7 @@
                           <%--      <asp:BoundField DataField="TechLevelname" HeaderText="技术水平" />
                                 <asp:BoundField DataField="HangYeName" HeaderText="所属行业" />
                                 <asp:BoundField DataField="ResultsTypeName" HeaderText="技术成果来源" />--%>
-                         <%--       <asp:BoundField DataField="ShuiPingName" HeaderText="成果水平" />--%>
+                          <%--       <asp:BoundField DataField="ShuiPingName" HeaderText="成果水平" />--%>
                              <%--   <asp:BoundField DataField="YYQKName" HeaderText="应用情况" />
                                 <asp:BoundField DataField="JiaoYiName" HeaderText="交易状态" />--%>
                                 <asp:BoundField DataField="createdate" HeaderText="收录时间"  DataFormatString="{0:yy-MM-dd HH:mm}" />
@@ -96,8 +97,8 @@
                                 <asp:TemplateField HeaderText="操作">
                                     <ItemTemplate>
                                          
-                                        <a href="zhengceadd.aspx?id=<%# Eval("ID") %>&p=<%=PgIndex %>" target="_blank">编辑</a>
-                                        <a href="zhengcezc.aspx?id=<%# Eval("ID") %>&p=<%=PgIndex %>" target="_blank">编辑支持限制</a>
+                                        <a href="zhengcejs.aspx?id=<%# Eval("ID") %>&p=<%=PgIndex %>" target="_blank">编辑</a>
+                                        <%--<a href="zhengcezc.aspx?id=<%# Eval("ID") %>&p=<%=PgIndex %>" target="_blank">编辑支持限制</a>--%>
                                         <asp:LinkButton ID="sc" runat="server" CommandArgument='<%# Eval("ID") %>' OnClientClick="if(confirm(&quot;确定要删除该项目数据么?&quot;)==false)return false;" OnCommand="sc_Command">删除</asp:LinkButton>
 
                                         

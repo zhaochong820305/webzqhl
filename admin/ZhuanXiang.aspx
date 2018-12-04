@@ -1,50 +1,54 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="zhengcekeyword.aspx.cs" Inherits="admin_zhengcekeyword" %>
-
-<%@ Register Src="~/Admin/include/setlistlink.ascx" TagPrefix="uc1" TagName="setlistlink" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ZhuanXiang.aspx.cs" Inherits="admin_ZhuanXiang" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link href="css/main.css" rel="stylesheet" />
+        <link href="css/main.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/grid.css" rel="stylesheet" />
     <link href="css/qiyegl.css" rel="stylesheet" type="text/css" />
-    <style>
+     <style>
         *{margin:5px; padding:0;}
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="float:left">      
-        <%--        <uc1:setlistlink runat="server" id="setlistlink" />--%>
-        <hr Width="874px">
- 
-        添加: 请输入类型：<asp:TextBox CssClass="inputLB" ID="TextBox1" runat="server" Height="30px"></asp:TextBox> &nbsp; &nbsp;<asp:Button ID="Button1" runat="server" Text="添加" class="buttonLB1" OnClick="Button1_Click" Height="30px" Width="80px" />
-        <%if (stype == "52")
-            { %>      
-                    <a <% if (stype == "52") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="HangYeZC2.aspx?type=41">+二级行业分类</a>&nbsp;
-        <%}
-        else if (stype == "54")
-        {%>
-            <a <% if (stype == "54") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="ZhuanXiang.aspx?type=41">+二级专项分类</a>&nbsp;
-        <% } %>
+    <div style="float:left; ">      
+      
+        <hr  width="874px">
+        <%--   <asp:GridView ID="myGrid" Width="1100px" Height="100%" runat="server"
+                       CssClass="mGrid"
+   PagerStyle-CssClass="pgr"   BackColor="White" 
+        BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" 
+        ForeColor="Black" GridLines="Vertical" AllowPaging="True" 
+            AutoGenerateColumns="False" PageSize="14" OnPageIndexChanging="myGrid_PageIndexChanging" 
+                      ShowHeaderWhenEmpty="True" OnRowDataBound="myGrid_RowDataBound" OnRowEditing="myGrid_RowEditing"
+                        OnRowUpdating="myGrid_RowUpdating">--%>
+        &nbsp;专项领域：<asp:DropDownList  CssClass="inputLB" Width="300px"  ID="hangye" runat="server" AutoPostBack="True" OnSelectedIndexChanged="hangye_SelectedIndexChanged"></asp:DropDownList>
+        <br><br>&nbsp;添加: 专项名称：<asp:TextBox  CssClass="inputLB" ID="TextBox1" runat="server" Width="500px" Height="30px"></asp:TextBox>
+               <%--        子行业描述： <asp:TextBox  CssClass="inputLB" ID="TextBox2" runat="server" Width="405px" Height="30px"></asp:TextBox>--%>
+         &nbsp;<asp:Button ID="Button1"  CssClass="buttonLB1"  runat="server" Text="添加" OnClick="Button1_Click"  Height="30px" Width="80px"/>
         <br />
-        <br /><hr Width="874px" /><asp:Label ID="Label1" runat="server" ForeColor="#FF0066"></asp:Label>
+        <br /><hr width="874px"><asp:Label ID="Label1" runat="server" ForeColor="#FF0066"></asp:Label>
              <asp:GridView ID="myGrid" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ID"
-                        ForeColor="#333333" GridLines="None"   OnRowEditing="myGrid_RowEditing" PageSize="14" AllowPaging="True"  OnPageIndexChanging="myGrid_PageIndexChanging" 
-                        OnRowUpdating="myGrid_RowUpdating" OnRowCancelingEdit="myGrid_RowCancelingEdit" Width="874px" CssClass="mGrid"
-                PagerStyle-CssClass="pgr" >
-                 <RowStyle Height="28px" />
-                        <Columns>
-                            <asp:BoundField DataField="ID" HeaderText="参数值" ReadOnly="true"   />
-                            <asp:BoundField DataField="name" HeaderText="参数名称" />
-                            <asp:CommandField HeaderText="编辑" ShowEditButton="True" >
+                        ForeColor="#333333" GridLines="None"   OnRowEditing="myGrid_RowEditing" OnRowDataBound="myGrid_RowDataBound"
+                     PageSize="14" AllowPaging="True"  OnPageIndexChanging="myGrid_PageIndexChanging"    OnRowUpdating="myGrid_RowUpdating" OnRowCancelingEdit="myGrid_RowCancelingEdit"  Width="874px" CssClass="mGrid"
+   PagerStyle-CssClass="pgr" >
+                        <RowStyle Height="28px"   />
+                        <Columns>                           
+                          
+                            <asp:BoundField DataField="ID" HeaderText="参数值"  ItemStyle-Width="100px"  ReadOnly="True"/>
+                            <asp:BoundField DataField="name" HeaderText="参数名称"  ItemStyle-Width="500px"/>
+                            <%--  <asp:BoundField DataField="Description" HeaderText="描述" ItemStyle-Width="560px" />--%>
+                         
+                           
+                            <asp:CommandField HeaderText="编辑" ShowEditButton="True"  ItemStyle-Width="100px">
                             <FooterStyle ForeColor="Blue" />
                             <ItemStyle ForeColor="Blue" />
                             </asp:CommandField>
-                            <asp:TemplateField HeaderText="操作">
+                            <asp:TemplateField HeaderText="操作"  ItemStyle-Width="100px">
                                 <ItemTemplate>
                                    
                                  <%--   <a href="projectedit.aspx?id=<%# Eval("ID") %>" >编辑</a>  
@@ -83,4 +87,3 @@
     </form>
 </body>
 </html>
-

@@ -18,11 +18,11 @@ public partial class admin_zhengcezc : System.Web.UI.Page
             Response.Redirect("login.aspx");
             Response.End();
         }
-        try
-        {
-            this.content1.Text = Request.Form["content"];
-        }
-        catch { }
+        //try
+        //{
+        //    this.content1.Text = Request.Form["content"];
+        //}
+        //catch { }
         try
         {
             id = int.Parse(Request.QueryString["id"].ToString());
@@ -35,7 +35,7 @@ public partial class admin_zhengcezc : System.Web.UI.Page
                 //NewMethod(3, CheckBoxList3);
                 //NewMethod(4, CheckBoxList4);
                 setting(2, gldiqu);  //地区
-                setting(2, xzdiqu);  //地区
+                //setting(2, xzdiqu);  //地区
                 if (id == 0)
                 {
                     //faburiqi.Text = DateTime.Now.ToString("yyyy-MM-dd");
@@ -48,108 +48,117 @@ public partial class admin_zhengcezc : System.Web.UI.Page
                     {
                         DataRow dr = dt.Rows[0];
                         mingcheng.Text = dr["mingcheng"].ToString();
-                        glchanneng.Text = dr["glchanneng"].ToString();
+                        //glchanneng.Text = dr["glchanneng"].ToString();
                         gldiqu.Text = dr["gldiqu"].ToString();
-                        zcshuoming.Text = dr["zcshuoming"].ToString();
-                        gmshuoming.Text = dr["gmshuoming"].ToString();
+                        //zcshuoming.Text = dr["zcshuoming"].ToString();
+                        //gmshuoming.Text = dr["gmshuoming"].ToString();
 
-                        psshuoming.Text = dr["psshuoming"].ToString();
-                        sbjttiaojian.Text = dr["sbjttiaojian"].ToString();
+                        //psshuoming.Text = dr["psshuoming"].ToString();
+                        //sbjttiaojian.Text = dr["sbjttiaojian"].ToString();
 
-                        xzchanneng.Text = dr["xzchanneng"].ToString();
-                        xzdiqu.Text = dr["xzdiqu"].ToString();
-                        xzzhuti.Text = dr["xzzhuti"].ToString();
-                        content.Text = dr["xzfashism"].ToString();
+                        //xzchanneng.Text = dr["xzchanneng"].ToString();
+                        //xzdiqu.Text = dr["xzdiqu"].ToString();
+                        //xzzhuti.Text = dr["xzzhuti"].ToString();
+                        //content.Text = dr["xzfashism"].ToString();
 
-                        if (dr["gldixiang"].ToString().Contains("组织机构"))
+                        if (dr["gldixiang"].ToString().Contains("支持园区/地方（高新区，市等）"))
                         {
                             jishu1_1.Checked = true;
                         }                        
-                        if (dr["gldixiang"].ToString().Contains("个人"))
+                        if (dr["gldixiang"].ToString().Contains("支持企业（支持央企/国企；不限企业类型）"))
                         {
                             jishu1_2.Checked = true;
                         }
-                        if (dr["gldixiang"].ToString().Contains("项目"))
+
+                        if (dr["zczijin"].ToString() == "1")
                         {
-                            jishu1_3.Checked = true;
-                        }
-                        if (dr["gldixiang"].ToString().Contains("其他"))
-                        {
-                            jishu1_4.Checked = true;
-                            txtjishu4_3.Value = dr["gldixiang"].ToString().Substring((dr["gldixiang"].ToString().IndexOf("其他：")+3));
+                            RadioButton4.Checked = true;
                         }
                         else
                         {
-                            //msg.Text = dr["gldixiang"].ToString().Contains("其他").ToString(); 
+                            RadioButton5.Checked = true;
                         }
+                        //if (dr["gldixiang"].ToString().Contains("项目"))
+                        //{
+                        //    jishu1_3.Checked = true;
+                        //}
+                        //if (dr["gldixiang"].ToString().Contains("其他"))
+                        //{
+                        //    jishu1_4.Checked = true;
+                        //    txtjishu4_3.Value = dr["gldixiang"].ToString().Substring((dr["gldixiang"].ToString().IndexOf("其他：")+3));
+                        //}
+                        //else
+                        //{
+                        //    //msg.Text = dr["gldixiang"].ToString().Contains("其他").ToString(); 
+                        //}
 
-                        if (dr["shenbaotj"].ToString().Contains("资产/规模要求"))
+                        if (dr["zcjibie"].ToString().Contains("国家中央支持"))
                         {
-                            CheckBox8.Checked = true;
+                            RadioButton6.Checked = true;
                         }
-                        if (dr["shenbaotj"].ToString().Contains("企业性质要求"))
+                        if (dr["zcjibie"].ToString().Contains("部委支持"))
                         {
-                            CheckBox9.Checked = true;
+                            RadioButton7.Checked = true;
                         }
-                        if (dr["shenbaotj"].ToString().Contains("技术要求"))
+                        if (dr["zcjibie"].ToString().Contains("地方支持"))
                         {
-                            CheckBox10.Checked = true;
+                            RadioButton8.Checked = true;
                         }
-                        if (dr["shenbaotj"].ToString().Contains("其他"))
-                        {
-                            CheckBox11.Checked = true;
-                            Text4.Value = dr["shenbaotj"].ToString().Substring((dr["shenbaotj"].ToString().IndexOf("其他：") + 3));
-                        }
-                        else
-                        {
-                            //msg.Text = dr["gldixiang"].ToString().Contains("其他").ToString();
-                        }
+                        //if (dr["zcjibie"].ToString().Contains("其他"))
+                        //{
+                        //    CheckBox11.Checked = true;
+                        //    Text4.Value = dr["shenbaotj"].ToString().Substring((dr["shenbaotj"].ToString().IndexOf("其他：") + 3));
+                        //}
+                        //else
+                        //{
+                        //    //msg.Text = dr["gldixiang"].ToString().Contains("其他").ToString();
+                        //}
 
-                        if (dr["gmfangshi"].ToString().Contains("固定资产投资比例"))
-                        {
-                            CheckBox4.Checked = true;
-                        }
-                        if (dr["gmfangshi"].ToString().Contains("一定额度资金"))
-                        {
-                            CheckBox5.Checked = true;
-                        }
-                        if (dr["gmfangshi"].ToString().Contains("退税"))
-                        {
-                            CheckBox6.Checked = true;
-                        }
-                        if (dr["gmfangshi"].ToString().Contains("其他"))
-                        {
-                            CheckBox7.Checked = true;
-                            Text2.Value = dr["gmfangshi"].ToString().Substring((dr["gmfangshi"].ToString().IndexOf("其他：") + 3));
-                        }
-                        else
-                        {
-                            //msg.Text = dr["gldixiang"].ToString().Contains("其他").ToString();
-                        }
+                        //if (dr["gmfangshi"].ToString().Contains("固定资产投资比例"))
+                        //{
+                        //    CheckBox4.Checked = true;
+                        //}
+                        //if (dr["gmfangshi"].ToString().Contains("一定额度资金"))
+                        //{
+                        //    CheckBox5.Checked = true;
+                        //}
+                        //if (dr["gmfangshi"].ToString().Contains("退税"))
+                        //{
+                        //    CheckBox6.Checked = true;
+                        //}
+                        //if (dr["gmfangshi"].ToString().Contains("其他"))
+                        //{
+                        //    CheckBox7.Checked = true;
+                        //    Text2.Value = dr["gmfangshi"].ToString().Substring((dr["gmfangshi"].ToString().IndexOf("其他：") + 3));
+                        //}
+                        //else
+                        //{
+                        //    //msg.Text = dr["gldixiang"].ToString().Contains("其他").ToString();
+                        //}
 
 
 
-                        if (dr["zcshijian"].ToString().Contains("投资前"))
-                        {
-                            CheckBox1.Checked = true;
-                        }
-                        else if (dr["zcshijian"].ToString().Contains("投资后"))
-                        {
-                            CheckBox2.Checked = true;
-                        }
-                        else if(dr["zcshijian"].ToString().Contains("其他"))
-                        {
-                            CheckBox3.Checked = true;
-                            Text1.Value = dr["zcshijian"].ToString().Substring((dr["zcshijian"].ToString().IndexOf("其他：") + 3));
-                        }
-                        else { //msg.Text = dr["zcshijian"].ToString().Contains("其他").ToString(); 
-                        }
+                        //if (dr["zcshijian"].ToString().Contains("投资前"))
+                        //{
+                        //    CheckBox1.Checked = true;
+                        //}
+                        //else if (dr["zcshijian"].ToString().Contains("投资后"))
+                        //{
+                        //    CheckBox2.Checked = true;
+                        //}
+                        //else if(dr["zcshijian"].ToString().Contains("其他"))
+                        //{
+                        //    CheckBox3.Checked = true;
+                        //    Text1.Value = dr["zcshijian"].ToString().Substring((dr["zcshijian"].ToString().IndexOf("其他：") + 3));
+                        //}
+                        //else { //msg.Text = dr["zcshijian"].ToString().Contains("其他").ToString(); 
+                        //}
 
                         if (dr["psfangshi"].ToString().Contains("招投标"))
                         {
                             RadioButton1.Checked = true;
                         }
-                        else if (dr["psfangshi"].ToString().Contains("定向"))
+                        else if (dr["psfangshi"].ToString().Contains("评审"))
                         {
                             RadioButton2.Checked = true;
                         }
@@ -246,47 +255,46 @@ public partial class admin_zhengcezc : System.Web.UI.Page
             string gldixiang = "";
             //string gldixiang = "";
             
-            if (jishu1_1.Checked == true) { gldixiang += "组织机构/企业，企业规模，类型等"; }//组织机构/企业
-            if (jishu1_2.Checked == true) { gldixiang += "个人,"; }//个人
-            if (jishu1_3.Checked == true) { gldixiang += "项目,"; }//技术转让
-            if (jishu1_4.Checked == true) { gldixiang += "其他：" + txtjishu4_3.Value.ToString(); }//其他
+            if (jishu1_1.Checked == true) { gldixiang += "支持园区/地方（高新区，市等）"; }//组织机构/企业
+            if (jishu1_2.Checked == true) { gldixiang += "支持企业（支持央企/国企；不限企业类型）"; }//个人
+            //if (jishu1_3.Checked == true) { gldixiang += "项目,"; }//技术转让
+            //if (jishu1_4.Checked == true) { gldixiang += "其他：" + txtjishu4_3.Value.ToString(); }//其他
 
             string zcshijian = "";
             //string gldixiang = "";
 
-            if (CheckBox1.Checked == true) { zcshijian = "投资前"; }//投资前
-            if (CheckBox2.Checked == true) { zcshijian = "投资后"; }//投资后          
-            if (CheckBox3.Checked == true) { zcshijian = "其他：" + Text1.Value.ToString(); }//其他
+            //if (CheckBox1.Checked == true) { zcshijian = "投资前"; }//投资前
+            //if (CheckBox2.Checked == true) { zcshijian = "投资后"; }//投资后          
+            //if (CheckBox3.Checked == true) { zcshijian = "其他：" + Text1.Value.ToString(); }//其他
 
             string psfangshi = "";
             //string gldixiang = "";
 
             if (RadioButton1.Checked == true) { psfangshi = "招投标"; }//招投标
-            if (RadioButton2.Checked == true) { psfangshi = "定向"; }//投资后          
+            if (RadioButton2.Checked == true) { psfangshi = "评审"; }//评审          
             if (RadioButton3.Checked == true) { psfangshi = "其他：" + Text3.Value.ToString(); }//其他
 
-            string gmfangshi = "";
+            int zczijin = 0;
             //string gldixiang = "";
 
-            if (CheckBox4.Checked == true) { gmfangshi += "固定资产投资比例"; }//固定资产投资比例
-            if (CheckBox5.Checked == true) { gmfangshi += "一定额度资金,"; }//一定额度资金
-            if (CheckBox6.Checked == true) { gmfangshi += "退税,"; }//技术转让
-            if (CheckBox7.Checked == true) { gmfangshi += "其他：" + Text2.Value.ToString(); }//其他
+            if (RadioButton4.Checked == true) { zczijin = 1; }//固定资产投资比例
+            if (RadioButton5.Checked == true) { zczijin = 0; }//一定额度资金
+            //if (CheckBox6.Checked == true) { gmfangshi += "退税,"; }//技术转让
+            //if (CheckBox7.Checked == true) { gmfangshi += "其他：" + Text2.Value.ToString(); }//其他
 
-            string shenbaotj = "";
+            string zcjibie = "";
             //string gldixiang = "";
 
-            if (CheckBox8.Checked == true) { shenbaotj += "资产/规模要求,"; }//资产/规模要求
-            if (CheckBox9.Checked == true) { shenbaotj += "企业性质要求,"; }//企业性质要求
-            if (CheckBox10.Checked == true) { shenbaotj += "技术要求,"; }//技术要求
-            if (CheckBox11.Checked == true) { shenbaotj += "其他：" + Text4.Value.ToString(); }//其他
+            if (RadioButton6.Checked == true) { zcjibie += "国家中央支持,"; }//资产/规模要求
+            if (RadioButton7.Checked == true) { zcjibie += "部委支持,"; }//企业性质要求
+            if (RadioButton8.Checked == true) { zcjibie += "地方支持,"; }//技术要求
+            //if (CheckBox11.Checked == true) { shenbaotj += "其他：" + Text4.Value.ToString(); }//其他
 
             //sql = "update zqhl_news set [title]='" + Common.strFilter(title.Text) + "',[content]='" + Common.strFilter(content1.Text.Replace("&emsp ", "&emsp;")) + "',classid=" + classid + ",qz=" + Common.strFilter(qz.Text);
             //sql += ",pic='" + Common.strFilter(pic.Text) + "',en=" + ((en.Checked) ? "1" : "0") + ",sel=" + ((sel.Checked) ? "1" : "0") + ",writer='" + Common.strFilter(writer.Text) + "',typename='" + cbtext1 + "',cdate='" + cdate.Text + "'  where id=" + id;
-            sql = @"update zhengce set [glchanneng]='" + Common.strFilter(glchanneng.Text) + "',[gldiqu]='" + Common.strFilter(gldiqu.Text) + "' ,[gldixiang]='" + Common.strFilter(gldixiang) + "',[zcshijian]='" + Common.strFilter(zcshijian)
-                + "' ,[zcshuoming] ='" + Common.strFilter(zcshuoming.Text) + "'          ,[gmfangshi]    ='" + Common.strFilter(gmfangshi) + "'        ,[gmshuoming]='" + Common.strFilter(gmshuoming.Text) + "'            ,[psfangshi]='" + Common.strFilter(psfangshi)
-                + "'  ,[psshuoming]='" + Common.strFilter(psshuoming.Text) + "'            ,[shenbaotj]='" + Common.strFilter(shenbaotj) + "'            ,[sbjttiaojian]='" + Common.strFilter(sbjttiaojian.Text) + "'            ,[xzchanneng]='" + Common.strFilter(xzchanneng.Text)
-                + "' ,[xzdiqu]='" + Common.strFilter(xzdiqu.Text) + "'             ,[xzzhuti] ='" + Common.strFilter(xzzhuti.Text) + "'           ,[xzfashism] ='" + Common.strFilter(content1.Text) + "'                  ,[update]='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' where id="+ id +"";
+            sql = @"update zhengce set  [gldiqu]='" + Common.strFilter(gldiqu.Text) + "' ,[gldixiang]='" + Common.strFilter(gldixiang) + "',[zcshijian]='" + Common.strFilter(zcshijian)
+                + "'       ,[zczijin]='" + zczijin + "' ,[zcjibie]='" + Common.strFilter(zcjibie) + "'    ,[psfangshi]='" + Common.strFilter(psfangshi)
+                + "'            ,[update]='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' where id="+ id +"";
         }
         int count = DBZhengce.getRowsCount(sql);
         if (count > 0) msg.Text = "保存成功"; else msg.Text = "保存失败" + sql;

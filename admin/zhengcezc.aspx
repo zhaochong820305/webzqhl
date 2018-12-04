@@ -62,31 +62,45 @@
         </li>
         
        
-        <li><label class="labelblue">支持产能：</label>
+        <%--<li><label class="labelblue">支持产能：</label>
             <asp:TextBox ID="glchanneng" CssClass="inputLB" MaxLength="20" Width="600px" runat="server"></asp:TextBox>(鼓励/支持-产能)
-        </li>
+        </li>--%>
         <li><label class="labelblue">支持地区：</label>
             <asp:DropDownList ID="gldiqu"  CssClass="inputLB" Width="600px" runat="server"></asp:DropDownList>(鼓励/支持-地区)
         </li>
-        <li class="danhang"><label class="labelblue">支持主体：</label>
-             <asp:CheckBox ID="jishu1_1" runat="server" class="radio" Text="  组织机构/企业，企业规模，类型等" /> 
-             <asp:CheckBox ID="jishu1_2" runat="server" class="radio" Text="  个人" /> 
-             <asp:CheckBox ID="jishu1_3" runat="server" class="radio" Text="  项目" />
+        <li class="danhang"><label class="labelblue">支持类型：</label>
+             <asp:RadioButton ID="RadioButton4" runat="server" class="radio" Text="  有资金支持" GroupName="zijin" /> 
+             <asp:RadioButton ID="RadioButton5" runat="server" class="radio" Text="  没有资金支持"   GroupName="zijin" /> 
+           
+             (鼓励/支持-支持类型)
+        </li>
+        <li class="danhang"><label class="labelblue">支持级别：</label>
+             <asp:RadioButton ID="RadioButton6" runat="server" class="radio" Text="  国家中央支持"  GroupName="jibei"/> 
+             <asp:RadioButton ID="RadioButton7" runat="server" class="radio" Text="  部委支持"  GroupName="jibei"/> 
+             <asp:RadioButton ID="RadioButton8" runat="server" class="radio" Text="  地方支持" GroupName="jibei"/>
+             <%--  <asp:CheckBox ID="jishu1_4" runat="server" class="radio" Text="  其他(请注明)" />&nbsp;&nbsp;
+             <input runat="server" class="igbt7_1 " type="text" id="txtjishu4_3"  autocomplete="off"/>--%>
+             (鼓励/支持-支持级别)
+        </li>
+        <li class="danhang"><label class="labelblue">支持对象：</label>
+             <asp:RadioButton ID="jishu1_1" runat="server" class="radio" Text="  支持园区/地方（高新区，市等）" GroupName="duixiang"/> 
+             <asp:RadioButton ID="jishu1_2" runat="server" class="radio" Text="  支持企业（支持央企/国企；不限企业类型）"  GroupName="duixiang"/> 
+           <%--  <asp:CheckBox ID="jishu1_3" runat="server" class="radio" Text="  项目" />
              <asp:CheckBox ID="jishu1_4" runat="server" class="radio" Text="  其他(请注明)" />&nbsp;&nbsp;
-             <input runat="server" class="igbt7_1 " type="text" id="txtjishu4_3"  autocomplete="off"/>
+             <input runat="server" class="igbt7_1 " type="text" id="txtjishu4_3"  autocomplete="off"/>--%>
              (鼓励/支持-主体/对象)
         </li>
-        <li class="danhang"><label class="labelblue">支持时间：</label>
+       <%-- <li class="danhang"><label class="labelblue">支持时间：</label>
              <asp:RadioButton ID="CheckBox1" runat="server" class="radio" Text="  投资前" GroupName="jishu4_4" /> 
              <asp:RadioButton ID="CheckBox2" runat="server" class="radio" Text="  投资后" GroupName="jishu4_4"/>
              <asp:RadioButton ID="CheckBox3" runat="server" class="radio" Text="  其他(请注明)" GroupName="jishu4_4"/>&nbsp;&nbsp;
              <input runat="server" class="igbt7_1 " type="text" id="Text1"  autocomplete="off"/>（发文单位所属层级）
-        </li>
-        <li  ><label class="labelblue">支持时间-具体说明：</label><br />
-<%--            <asp:Label ID="content1"  runat="server" Text="" Visible="False"></asp:Label>--%>
+        </li>--%>
+        <%--<li  ><label class="labelblue">支持时间-具体说明：</label><br />
+            
             <asp:TextBox ID="zcshuoming"   Width="800px" TextMode="MultiLine" Height="100px" runat="server"></asp:TextBox>
-        </li>
-        <li class="danhang"><label class="labelblue">支持规模-支持方式：</label>
+        </li>--%>
+        <%--<li class="danhang"><label class="labelblue">支持规模-支持方式：</label>
              <asp:CheckBox ID="CheckBox4" runat="server" class="radio" Text="  固定资产投资比例" /> 
              <asp:CheckBox ID="CheckBox5" runat="server" class="radio" Text="  一定额度资金" /> 
              <asp:CheckBox ID="CheckBox6" runat="server" class="radio" Text="  退税" />
@@ -94,40 +108,37 @@
              <input runat="server" class="igbt7_1 " type="text" id="Text2"  autocomplete="off"/>（支持规模-支持方式）
         </li>
         <li  ><label class="labelblue">支持规模-具体说明：</label><br />
-<%--            <asp:Label ID="content1"  runat="server" Text="" Visible="False"></asp:Label>--%>
+
             <asp:TextBox ID="gmshuoming"   Width="800px" TextMode="MultiLine" Height="100px" runat="server"></asp:TextBox>
-        </li>
+        </li>--%>
         <li class="danhang"><label class="labelblue">评审方式：</label>
-             <asp:RadioButton ID="RadioButton1" runat="server" class="radio" Text="  招投标" GroupName="jishu4_5" /> 
-             <asp:RadioButton ID="RadioButton2" runat="server" class="radio" Text="  定向" GroupName="jishu4_5"/>
+             <asp:RadioButton ID="RadioButton2" runat="server" class="radio" Text="  评审" GroupName="jishu4_5"/>
+             <asp:RadioButton ID="RadioButton1" runat="server" class="radio" Text="  招投标" GroupName="jishu4_5" />              
              <asp:RadioButton ID="RadioButton3" runat="server" class="radio" Text="  其他(请注明)" GroupName="jishu4_5"/>&nbsp;&nbsp;
              <input runat="server" class="igbt7_1 " type="text" id="Text3"  autocomplete="off"/>（发文单位所属层级） 
         </li>
        
         <br />
-        <li  ><label class="labelblue">评审方式-具体说明：</label><br />
-<%--            <asp:Label ID="content1"  runat="server" Text="" Visible="False"></asp:Label>--%>
+       <%-- <li  ><label class="labelblue">评审方式-具体说明：</label><br />
             <asp:TextBox ID="psshuoming"   Width="800px" TextMode="MultiLine" Height="100px" runat="server"></asp:TextBox>
-        </li>
-        <li class="danhang"><label class="labelblue">申报/建设条件：</label>
+        </li>--%>
+        <%--<li class="danhang"><label class="labelblue">申报/建设条件：</label>
              <asp:CheckBox ID="CheckBox8" runat="server" class="radio" Text="  资产/规模要求" /> 
              <asp:CheckBox ID="CheckBox9" runat="server" class="radio" Text="  企业性质要求" /> 
              <asp:CheckBox ID="CheckBox10" runat="server" class="radio" Text="  技术要求" />
              <asp:CheckBox ID="CheckBox11" runat="server" class="radio" Text="  其他(请注明)" />&nbsp;&nbsp;
              <input runat="server" class="igbt7_1 " type="text" id="Text4"  autocomplete="off"/>
-        </li>
-        <li  ><label class="labelblue">申报/建设具体条件：</label><br />
-<%--            <asp:Label ID="content1"  runat="server" Text="" Visible="False"></asp:Label>--%>
+        </li>--%>
+        <%--<li  ><label class="labelblue">申报/建设具体条件：</label><br />
+
             <asp:TextBox ID="sbjttiaojian"   Width="800px" TextMode="MultiLine" Height="100px" runat="server"></asp:TextBox>
         </li>
-        <%--<li> 
-            <%=str %>
-        </li>--%>
+        
         <li><label class="labelblue">限制产能：</label>
             <asp:TextBox ID="xzchanneng"  CssClass="inputLB" Width="600px" runat="server"></asp:TextBox>（限制/禁止-产能）
         </li>
         <li><label class="labelblue">限制地区：</label>
-            <%--<asp:TextBox ID="hangye" CssClass="inputLB" MaxLength="20" Width="600px" runat="server"></asp:TextBox>--%>
+            
             <asp:DropDownList  CssClass="inputLB" Width="600px"  ID="xzdiqu" runat="server" AutoPostBack="True"></asp:DropDownList>（限制/禁止-地区）
         </li>
         <li><label class="labelblue">限制主体：</label>
@@ -137,7 +148,7 @@
         <li  ><label class="labelblue">限制方式说明：</label><br />
             <asp:Label ID="content1"  runat="server" Text="" Visible="False"></asp:Label>
             <asp:TextBox ID="content"   Width="800px" TextMode="MultiLine" Height="100px" runat="server"></asp:TextBox>
-        </li>
+        </li>--%>
         <li><label class="labelblue">&nbsp;</label>
             <asp:Button ID="bc" CssClass="buttonLB" runat="server" Text=" 保 存 " OnClick="bc_Click" />
         </li>
