@@ -37,7 +37,7 @@ public partial class admin_zhengcecaiji : System.Web.UI.Page
     }
     private void setting(int itype, DropDownList ddlname)
     {
-        DataTable dt = DBZhengce.getDataTable("SELECT  [ID],[Name]  FROM [dbo].[Setting] where SettingID=" + itype + "");
+        DataTable dt = DBZhengce.getDataTable("SELECT  [ID],[Name]  FROM [dbo].[sheng]  ");
         ddlname.DataSource = dt;
         ddlname.DataTextField = "Name";
         ddlname.DataValueField = "ID";

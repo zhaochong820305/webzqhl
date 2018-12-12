@@ -10,7 +10,7 @@
             <li id="list9" onclick="loadurl('tpxw.aspx',this);">图片管理</li>
             <%--     <li id="list1" onclick="loadurl('yhgl.aspx',this);">管理用户</li>--%>
               <%}
-            if (Session["adminloginuser"].ToString() == "admin" )
+            if (Session["adminloginuser"].ToString() == "admin" ||  Session["title"].ToString() == "3")
             {%>
             <li id="list7" onclick="loadurl('zxsq.aspx',this);">在线申请</li>
             <%}

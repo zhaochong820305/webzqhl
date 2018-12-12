@@ -298,7 +298,7 @@ public partial class admin_zhengce : System.Web.UI.Page
 
     protected void new_Click(object sender, EventArgs e)
     {
-        Response.Redirect("zhengceadd.aspx?id=0");
+        Response.Redirect("zhengcejs.aspx?id=0");
     }
     protected void cyr_Click(object sender, EventArgs e)
     {

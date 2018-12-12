@@ -17,6 +17,7 @@
 	<script charset="utf-8" src="js/kindeditor-all.js"></script>
 	<script charset="utf-8" src="js/lang/zh-CN.js"></script>
 	<script charset="utf-8" src="js/plugins/code/prettify.js"></script>
+    
     <style>
         .bianji label{ display:inline-block; width:100px; margin-top:10px;}
         .bianji input{ margin-top:10px;}
@@ -67,16 +68,17 @@
             <asp:TextBox ID="fawendanwen" CssClass="inputLB" MaxLength="20" Width="600px" runat="server"></asp:TextBox>
         </li>
         <li><label class="labelblue">单位层级：</label>            
-            <input   type="radio"   name="cengji"  ID="cengji1"   value="1" onclick="getRadio()" runat="server">国务院  
-            <input   type="radio"   name="cengji"  ID="cengji2"   value="2" onclick="getRadio()" runat="server">国家部委 
-            <input   type="radio"   name="cengji"  ID="cengji3"   value="3" onclick="getRadio()" runat="server">地方
+            <input type="radio" name="cengji"  ID="cengji1" value="1" onclick="getRadio()" runat="server">国务院  
+            <input type="radio" name="cengji"  ID="cengji2" value="2" onclick="getRadio()" runat="server">国家部委 
+            <input type="radio" name="cengji"  ID="cengji3" value="3" onclick="getRadio()" runat="server">地方
         </li>
         <li id="buweili" <%=buweiview %>><label class="labelblue">国家部委：</label>
-            <input   type="radio"   name="buwei"   value="1" onclick="getRadiobw()" ID="buwei1" runat="server">工信部  
-            <input   type="radio"   name="buwei"   value="2" onclick="getRadiobw()" ID="buwei2" runat="server">发改委 
+            <input   type="radio"   name="buwei"   value="2" onclick="getRadiobw()" ID="buwei2" runat="server">发改委
+            <input   type="radio"   name="buwei"   value="1" onclick="getRadiobw()" ID="buwei1" runat="server">工信部
+            <input   type="radio"   name="buwei"   value="5" onclick="getRadiobw()" ID="buwei5" runat="server">科技部
             <input   type="radio"   name="buwei"   value="3" onclick="getRadiobw()" ID="buwei3" runat="server">商务部
             <input   type="radio"   name="buwei"   value="4" onclick="getRadiobw()" ID="buwei4" runat="server">财政部  
-            <input   type="radio"   name="buwei"   value="5" onclick="getRadiobw()" ID="buwei5" runat="server">科技部
+            
         </li>
         <li  id="zhengceli" <%=kejiview %>><label class="labelblue">政策类型：</label>            
             <input   type="radio"   name="zhengcel" id="zhengcel1"  value="1" onclick="getRadiozx()" runat="server">专项  
@@ -89,13 +91,13 @@
                     <input   type="radio"   name="xiangmu" id="xiangmu2"  value="2" onclick="getRadioxm()" runat="server">重点研发计划试点专项 
                     <input   type="radio"   name="xiangmu" id="xiangmu3"  value="3" onclick="getRadioxm()" runat="server">重大专项
                 </li>
-                <li id="zhangxiangli1"><label class="labelblue">专项名称：</label>
+                <li id="zhangxiangli1"  <%=zhangxiangli1view %>><label class="labelblue">专项名称：</label>
                     <asp:DropDownList  CssClass="inputLB" Width="400px"  ID="zhangxiang1" runat="server"></asp:DropDownList> 
                 </li>
-                <li id="zhangxiangli2"  style="display:none;"><label class="labelblue">专项名称：</label>
+                <li id="zhangxiangli2"  <%=zhangxiangli2view %>><label class="labelblue">专项名称：</label>
                     <asp:DropDownList  CssClass="inputLB" Width="400px"  ID="zhangxiang2" runat="server"></asp:DropDownList> 
                 </li>
-                <li id="zhangxiangli3"  style="display:none;"><label class="labelblue">专项名称：</label>
+                <li id="zhangxiangli3"  <%=zhangxiangli3view %>><label class="labelblue">专项名称：</label>
                     <asp:DropDownList  CssClass="inputLB" Width="400px"  ID="zhangxiang3" runat="server"></asp:DropDownList> 
                 </li>
                 <li><label class="labelblue">专项年份：</label>
@@ -112,14 +114,14 @@
                 </li>
             </ul>
         </div>
-        <li id="difangli"  <%=difangview %><label class="labelblue">地方省级：</label>
+        <%--<li id="difangli"  <%=difangview %><label class="labelblue">地方省级：</label>
             <asp:DropDownList  CssClass="inputLB" Width="200px"  ID="buwensheng" runat="server"></asp:DropDownList> 
-        </li>
+        </li>--%>
         <div  id="gongchengli" <%=gongchengview %>>
             <ul>
                 <li>
                     <label class="labelblue">所属工程：（政策所属：五大工程，其他）</label>
-                    <asp:RadioButtonList ID="gongchengc" runat="server" RepeatColumns="5" style="padding-left:86px;"></asp:RadioButtonList>
+                    <asp:RadioButtonList ID="gongchengc" runat="server" RepeatColumns="6" style="padding-left:86px;"></asp:RadioButtonList>
                 </li>
                 <li>                
                     <label class="labelblue">十大领域：（政策所属：十大重点领域）</label>
@@ -130,31 +132,37 @@
         <div id="zhichidiv" <%=zhichiview %>>
             <ul>
                 <li><label class="labelblue">支持地区：</label>
-                    <asp:DropDownList ID="gldiqu"  CssClass="inputLB" Width="600px" runat="server"></asp:DropDownList>(鼓励/支持-地区)
+                   <%-- <asp:Button ID="Button1"   runat="server" Text="全选" OnClick="Button1_Click" />
+                    <asp:Button ID="Button2"   runat="server" Text="反选" OnClick="Button2_Click" />--%>
+                    全选<asp:CheckBox ID="CheckBoxAll" runat="server" onClick="javascript:Check_Uncheck_All(this);" /><br /> 
+                    <%--<asp:CheckBoxList ID="CheckBoxListMusicType" runat="server" RepeatColumns="3" RepeatDirection="Horizontal" Width="300"></asp:CheckBoxList> --%>
+
+
+                    <asp:CheckBoxList ID="gldiqu" name="gldiqu" CssClass="inputLB" Width="600px" RepeatColumns="5"  runat="server"></asp:CheckBoxList>
                 </li>
                 <li class="danhang"><label class="labelblue">支持类型：</label>
                      <asp:RadioButton ID="RadioButton4" runat="server" class="radio" Text="  有资金支持" GroupName="zijin" /> 
                      <asp:RadioButton ID="RadioButton5" runat="server" class="radio" Text="  没有资金支持"   GroupName="zijin" /> 
            
-                     (鼓励/支持-支持类型)
+                    
                 </li>
-                <li class="danhang"><label class="labelblue">支持级别：</label>
+                <%-- <li class="danhang"><label class="labelblue">支持级别：</label>
                      <asp:RadioButton ID="RadioButton6" runat="server" class="radio" Text="  国家中央支持"  GroupName="jibei"/> 
                      <asp:RadioButton ID="RadioButton7" runat="server" class="radio" Text="  部委支持"  GroupName="jibei"/> 
                      <asp:RadioButton ID="RadioButton8" runat="server" class="radio" Text="  地方支持" GroupName="jibei"/>
-                     (鼓励/支持-支持级别)
-                </li>
+                     
+                </li>--%>
                 <li class="danhang"><label class="labelblue">支持对象：</label>
-                     <asp:RadioButton ID="jishu1_1" runat="server" class="radio" Text="  支持园区/地方（高新区，市等）" GroupName="duixiang"/> 
-                     <asp:RadioButton ID="jishu1_2" runat="server" class="radio" Text="  支持企业（支持央企/国企；不限企业类型）"  GroupName="duixiang"/> 
+                     <asp:RadioButton ID="jishu1_1" runat="server" class="radio" Text="  园区" GroupName="duixiang"/> 
+                     <asp:RadioButton ID="jishu1_2" runat="server" class="radio" Text="  企业"  GroupName="duixiang"/> 
                      <asp:RadioButton ID="jishu1_3" runat="server" class="radio" Text="  科研单位"  GroupName="duixiang"/> 
-                      (鼓励/支持-主体/对象)
+                     
                 </li>
                 <li class="danhang"><label class="labelblue">评审方式：</label>
                      <asp:RadioButton ID="RadioButton2" runat="server" class="radio" Text="  评审" GroupName="jishu4_5"/>
                      <asp:RadioButton ID="RadioButton1" runat="server" class="radio" Text="  招投标" GroupName="jishu4_5" />              
                      <asp:RadioButton ID="RadioButton3" runat="server" class="radio" Text="  其他(请注明)" GroupName="jishu4_5"/>&nbsp;&nbsp;
-                     <input runat="server" class="igbt7_1 " type="text" id="Text3"  autocomplete="off"/>（发文单位所属层级） 
+                     <input runat="server" class="igbt7_1 " type="text" id="Text3"  autocomplete="off"/>
                 </li>
             </ul>
         </div>
@@ -182,8 +190,8 @@
             <asp:Label ID="content1"  runat="server" Text="" Visible="False"></asp:Label>
             <asp:TextBox ID="content"   Width="800px" TextMode="MultiLine" Height="100px" runat="server"></asp:TextBox>
         </li>
-         <li><label class="labelblue">采集网址：</label>
-            <asp:TextBox ID="url" CssClass="inputLB" MaxLength="500" Width="600px" runat="server"></asp:TextBox>
+        <li><label class="labelblue"></label>
+            <asp:TextBox ID="url" CssClass="inputLB" MaxLength="500" Width="600px" runat="server" Visible="false"></asp:TextBox>
         </li>
         <li><label class="labelblue">&nbsp;</label>
             <asp:Button ID="bc" CssClass="buttonLB" runat="server" Text=" 保 存 " OnClick="bc_Click" />
@@ -205,21 +213,24 @@
         if (e.value == "2") {
             if (document.getElementById('buweili') != null && document.getElementById('buweili') != null) {
                 document.getElementById('buweili').style.display = '';
-                document.getElementById('difangli').style.display = 'none';
+                //document.getElementById('difangli').style.display = 'none';
                 //
             }
         } else if (e.value == "3") {
             document.getElementById('buweili').style.display = 'none';
-            document.getElementById('difangli').style.display = '';
+            //document.getElementById('difangli').style.display = '';
             document.getElementById('zhengceli').style.display = 'none';
             document.getElementById('xiangmuli').style.display = 'none';            
             document.getElementById('gongchengli').style.display = 'none';
+            document.getElementById('zhichidiv').style.display = '';
         } else {
             document.getElementById('buweili').style.display = 'none';
-            document.getElementById('difangli').style.display = 'none';
+            //document.getElementById('difangli').style.display = 'none';
             document.getElementById('zhengceli').style.display = 'none';
             document.getElementById('xiangmuli').style.display = 'none';
             document.getElementById('gongchengli').style.display = 'none';
+            document.getElementById('zhichidiv').style.display = '';
+            
         }
     }
     function getRadiobw(evt) {//部委
@@ -236,6 +247,7 @@
             document.getElementById('zhengceli').style.display = '';
             document.getElementById('xiangmuli').style.display = '';
             document.getElementById('zhichidiv').style.display = 'none';
+            document.getElementById('gongchengli').style.display = 'none';
         } else {//科技部
             document.getElementById('gongchengli').style.display = 'none';
             document.getElementById('zhengceli').style.display = 'none';
@@ -276,4 +288,21 @@
             document.getElementById('zhangxiangli3').style.display = '';
         }
     }
+    //全选
+    function Check_Uncheck_All(cb) { 
+        var cbl = document.getElementById("<%=gldiqu.ClientID%>"); 
+        var input = cbl.getElementsByTagName("input"); 
+        if (cb.checked) { 
+        for (var i = 0; i < input.length; i++) { 
+        input[i].checked = true; 
+        } 
+        } 
+        else { 
+        for (var i = 0; i < input.length; i++) { 
+        input[i].checked = false; 
+        } 
+        } 
+    } 
+
+
   </script>   
