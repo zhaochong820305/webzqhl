@@ -284,7 +284,7 @@ public partial class admin_diaochaccqlist : System.Web.UI.Page
         catch
         {
             //myGrid. = 0;
-            Response.Write(sql5);
+            //Response.Write(sql5);
         }
         finally
         {

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="baoming.aspx.cs" Inherits="admin_baoming" %>
-
+<%@ Register Src="~/Admin/include/wenjuanmenu.ascx" TagPrefix="uc1" TagName="wenjuanmenu" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,20 +17,16 @@
         <div  style="float:left;height:50px;line-height:40px;width:880px;text-align:center;">
               500强企业报名
         </div>
-        <div  style="float:left;height:100px;line-height:40px;width:880px;">
+        <div  style="float:left;height:160px;line-height:40px;width:980px;">
        
             企业名称：  <asp:TextBox ID="company" runat="server" Width="100px" CssClass="inputLB"></asp:TextBox>
             姓名：      <asp:TextBox ID="name" runat="server" Width="100px" CssClass="inputLB"></asp:TextBox>
             
-            <asp:Button ID="ss" CssClass="buttonLB" runat="server" Text="搜索" OnClick="ss_Click" />   
-            <%if (Session["title"].ToString() != "6")
-                { %>
-            <a href="diaocha.aspx" target="_blank">"IGBT" 企业调研表</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="diaoyitiao.aspx" >"一条龙" 企业调研表</a>
-            <%} %>
-
-            &nbsp;&nbsp;<a href="baoming.aspx" >500强企业报名</a>
-            &nbsp;&nbsp;<a href="baomingall.aspx" >500强企业报名导出报表</a>
+            <asp:Button ID="ss" CssClass="buttonLB" runat="server" Text="搜索" OnClick="ss_Click" />  
+            <br> 
+            <uc1:wenjuanmenu runat="server" id="wenjuanmenu" />
+            &nbsp;&nbsp;<a href="baomingall.aspx" class='buttonLB1'>500强企业报名导出报表</a>
+            <br>
             <%--&nbsp;&nbsp;<a href="diaoqiye.aspx" >优秀企业需求信息</a>--%>
          </div>   
          <%-- <div class="con-ns"><img src="http://www.liantu.com/api.php?bg=ffffff&fg=000000&gc=000000&el=L&text=http://m.miit-kjcg.org/mingpian.aspx?uid=<%=Session["userid"] %>&loginname=<%=Session["adminloginuser"] %>&title=<%=Session["title"] %>" style="width: 100px; height: 100px;"></div>--%>
@@ -57,14 +53,14 @@
                             <asp:BoundField DataField="cname" HeaderText="企业名称" />
                             <asp:BoundField DataField="tel" HeaderText="电话" />
                             <%--<asp:BoundField DataField="igbt" HeaderText="调查项目" />--%>
-                            <%--  <asp:BoundField DataField="email" HeaderText="电子邮箱" />--%>
-                            <%--  <asp:BoundField DataField="title" HeaderText="职务" />--%>
+                            <%--<asp:BoundField DataField="email" HeaderText="电子邮箱" />--%>
+                            <%--<asp:BoundField DataField="title" HeaderText="职务" />--%>
                             <asp:BoundField DataField="update" HeaderText="报名时间" />
                            
                             <asp:TemplateField HeaderText="操作">
                                 <ItemTemplate>
                                     <a href="baominglist.aspx?id=<%# Eval("companyid") %>&op=kan" >报表</a>   
-                                    <%--    <a href="mingpianadd.aspx?id=<%# Eval("ID") %>&op=edit" >编辑</a> --%>
+                                    <%--<a href="mingpianadd.aspx?id=<%# Eval("ID") %>&op=edit" >编辑</a> --%>
                                     <%--<asp:LinkButton ID="sc" runat="server" CommandArgument='<%# Eval("ID") %>' OnClientClick="if(confirm(&quot;确定要删除该项目数据么?&quot;)==false)return false;" OnCommand="sc_Command">删除</asp:LinkButton> --%>
                                 </ItemTemplate>
                             </asp:TemplateField>

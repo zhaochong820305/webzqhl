@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="diaocha.aspx.cs" Inherits="admin_diaocha" %>
-
+<%@ Register Src="~/Admin/include/wenjuanmenu.ascx" TagPrefix="uc1" TagName="wenjuanmenu" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,17 +17,13 @@
         <div  style="float:left;height:50px;line-height:40px;width:880px;text-align:center;">
               "IGBT" 企业调研表  列表
         </div>
-        <div  style="float:left;height:100px;line-height:40px;width:880px;">
+        <div  style="float:left;height:100px;line-height:40px;width:980px;">
        
             企业名称：  <asp:TextBox ID="company" runat="server" Width="100px" CssClass="inputLB"></asp:TextBox>
             姓名：      <asp:TextBox ID="name" runat="server" Width="100px" CssClass="inputLB"></asp:TextBox>
             
             <asp:Button ID="ss" CssClass="buttonLB" runat="server" Text="搜索" OnClick="ss_Click" />  <br> 
-            <a href="diaocha.aspx" >"IGBT" 企业调研表</a>&nbsp;&nbsp;&nbsp;&nbsp; 
-            <a href="diaoyitiao.aspx" >"一条龙" 企业调研</a>
-            &nbsp;&nbsp;<a href="diaoqiye.aspx" >企业需求信息</a>
-            &nbsp;&nbsp;<a href="baoming.aspx" >500强企业报名</a>
-            &nbsp;&nbsp;<a href="diaochaccq.aspx" >存储器一条龙申报提纲</a>
+            <uc1:wenjuanmenu runat="server" id="wenjuanmenu" />
          </div>   
          <%-- <div class="con-ns"><img src="http://www.liantu.com/api.php?bg=ffffff&fg=000000&gc=000000&el=L&text=http://m.miit-kjcg.org/mingpian.aspx?uid=<%=Session["userid"] %>&loginname=<%=Session["adminloginuser"] %>&title=<%=Session["title"] %>" style="width: 100px; height: 100px;"></div>--%>
     <asp:GridView ID="myGrid" Width="880px" Height="100%" runat="server"

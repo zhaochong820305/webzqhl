@@ -35,7 +35,7 @@
             <li id="list22" onclick="loadurl('ResultXuQiu.aspx',this);">成果需求</li>
             <li id="list20" onclick="loadurl('ResultsInfo.aspx',this);">政策研究</li>
             <li id="list18" onclick="loadurl('LiuYan.aspx',this);">成果留言</li>
-            <li id="list19" onclick="loadurl('diaocha.aspx',this);">调查问卷</li>
+            <li id="list19" onclick="loadurl('diaocha.aspx?type=2',this);">调查问卷</li>
             <li id="list21" onclick="loadurl('ziyuan.aspx',this);">资&nbsp;&nbsp;源&nbsp;&nbsp;库</li>
             <li id="list28" onclick="loadurl('zhengce.aspx',this);">政策大数据</li>
             <li id="list27" onclick="loadurl('video.aspx',this);">视频管理</li>

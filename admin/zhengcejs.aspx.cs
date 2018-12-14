@@ -20,8 +20,8 @@ public partial class admin_zhengcejs : System.Web.UI.Page
     public string xiangmuliview= "style=\"display:none;\"";
     public string zhichiview = "style=\"display:'';\"";
     public string zhangxiangli1view = "style=\"display:'';\"";
-    public string zhangxiangli2view = "style=\"display:'none';\"";
-    public string zhangxiangli3view = "style=\"display:'none';\"";
+    public string zhangxiangli2view = "style=\"display:none;\"";
+    public string zhangxiangli3view = "style=\"display:none;\"";
     protected void Page_Load(object sender, EventArgs e)
     {
         //hangye.AutoPostBack = true;

@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="setlistlink.ascx.cs" Inherits="QiangJiAdmin_include_setlistlink" %>
-<a <% if (stype == "2") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=2">+&nbsp;所在地区</a>&nbsp; 
+      <a <% if (stype == "2") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=2">+&nbsp;所在地区</a>&nbsp; 
       <a <% if (stype == "3") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=3">+&nbsp;所有行业</a>&nbsp; 
       <a <% if (stype == "5") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=5">+&nbsp;重点方向</a>&nbsp; 
       <a <% if (stype == "4") Response.Write("class='buttonLB1'"); else Response.Write("class='buttonLB1 button2'"); %> href="setlist.aspx?type=4">+&nbsp;企业性质&nbsp;</a>&nbsp; 

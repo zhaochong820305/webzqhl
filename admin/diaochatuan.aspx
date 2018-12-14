@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="diaoyitiao.aspx.cs" Inherits="admin_diaoyitiao" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="diaochatuan.aspx.cs" Inherits="admin_diaochatuan" %>
 <%@ Register Src="~/Admin/include/wenjuanmenu.ascx" TagPrefix="uc1" TagName="wenjuanmenu" %>
 <!DOCTYPE html>
 
@@ -13,8 +13,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div  style="float:left;height:50px;line-height:40px;width:980px;text-align:center;">
-              "一条龙" 企业调研
+     <div  style="float:left;height:500px;line-height:40px;width:100%;margin-left:20px;">
+        <div  style="float:left;height:50px;line-height:40px;width:880px;text-align:center;">
+              联盟团体标准制修订提案申请表
         </div>
         <div  style="float:left;height:100px;line-height:40px;width:980px;">
        
@@ -23,7 +24,7 @@
             
             <asp:Button ID="ss" CssClass="buttonLB" runat="server" Text="搜索" OnClick="ss_Click" />  <br> 
             <uc1:wenjuanmenu runat="server" id="wenjuanmenu" />
-         </div>  
+         </div>   
          <%-- <div class="con-ns"><img src="http://www.liantu.com/api.php?bg=ffffff&fg=000000&gc=000000&el=L&text=http://m.miit-kjcg.org/mingpian.aspx?uid=<%=Session["userid"] %>&loginname=<%=Session["adminloginuser"] %>&title=<%=Session["title"] %>" style="width: 100px; height: 100px;"></div>--%>
     <asp:GridView ID="myGrid" Width="880px" Height="100%" runat="server"
                        CssClass="mGrid"
@@ -47,14 +48,14 @@
                             </asp:TemplateField>--%>
                             <asp:BoundField DataField="Name" HeaderText="企业名称" />
                             <asp:BoundField DataField="ContactTel" HeaderText="电话" />
-                            <asp:BoundField DataField="igbt" HeaderText="调查项目" />
+                             
                             <%--  <asp:BoundField DataField="email" HeaderText="电子邮箱" />--%>
                             <%--  <asp:BoundField DataField="title" HeaderText="职务" />--%>
                             <asp:BoundField DataField="CreateDate" HeaderText="更新时间" />
                            
                             <asp:TemplateField HeaderText="操作">
                                 <ItemTemplate>
-                                    <a href="diaoyitiaolist.aspx?id=<%# Eval("ID") %>&op=kan" >报表</a>   
+                                    <a href="diaochatuanlist.aspx?id=<%# Eval("ID") %>&op=kan" >报表</a>   
                                     <%--    <a href="mingpianadd.aspx?id=<%# Eval("ID") %>&op=edit" >编辑</a> --%>
                                     <%--<asp:LinkButton ID="sc" runat="server" CommandArgument='<%# Eval("ID") %>' OnClientClick="if(confirm(&quot;确定要删除该项目数据么?&quot;)==false)return false;" OnCommand="sc_Command">删除</asp:LinkButton> --%>
                                 </ItemTemplate>

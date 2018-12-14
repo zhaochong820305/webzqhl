@@ -135,7 +135,7 @@ public partial class admin_qygl : System.Web.UI.Page
         string sql = @"select *,(select Name from  [dbo].[Setting] where [ID]=b.Region) as City
                                    ,(select Name from  [dbo].[Setting] where [ID]=b.EnterpriseType) as EnterType
                                    ,(select Name from  [dbo].[Setting] where [ID]=b.KeyAreas) as KeyArea
-                                   ,(case typeid WHEN '1' THEN '中企慧联' WHEN '2' THEN '联盟网站' WHEN '3' THEN '强基服务' WHEN '4' THEN '成果交易'  WHEN '5' THEN '工业强基'  WHEN '10' THEN '调查问卷' WHEN '11' THEN '后台录入' WHEN '12' THEN '一条龙调研' WHEN '13' THEN '优秀企业' WHEN '14' THEN '企业报名' WHEN '15' THEN '存储器' ELSE '未知' END) typename
+                                   ,(case typeid WHEN '1' THEN '中企慧联' WHEN '2' THEN '联盟网站' WHEN '3' THEN '强基服务' WHEN '4' THEN '成果交易'  WHEN '5' THEN '工业强基'  WHEN '10' THEN '调查问卷' WHEN '11' THEN '后台录入' WHEN '12' THEN '一条龙调研' WHEN '13' THEN '优秀企业' WHEN '14' THEN '企业报名' WHEN '15' THEN '存储器' WHEN '16' THEN '团体标准' ELSE '未知' END) typename
                                    ,case when b.state is null then '未审核' when b.state=1 then '已审核' when  b.state=0  then '已删除'  end as shenhe
                                     from [Company] b where (b.state=1 or   b.state is null ) ";
         if (Session["userid"].ToString() != "3" && Session["userid"].ToString() != "4" && Session["title"].ToString().Trim() != "5" && Session["userid"].ToString() != "13")
